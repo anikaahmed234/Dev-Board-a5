@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev-Board</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+
+<body class="bg-[#F4F7FF] flex flex-col w-screen justify-between h-screen px-50 py-14">
+
+    <div class=" bg-white flex flex-row rounded-2xl justify-between p-6 ">
+        <div class="logo-banner flex flex-row text-center items-center">
+            <img src="assets/logo.png" />
+            <h1 class="text-3xl">Dev<span class="font-bold">Board</span></h1>
+        </div>
+        <div class="flex flex-row ">
+            <div id="home-page" class="w-[135px] h-[44px] bg-[#3752FD] text-white font-semibold flex items-center justify-center rounded-lg cursor-pointer">
+                Back to Desk
+            </div>        
+        </div>
+    </div>
+
+    <main>
+        <h1 class="text-2xl font-bold text-center">Blogs</h1>
+
+        <div class="max-w-screen-2xl mx-auto my-5 py-5 px-5 rounded-lg bg-white">
+            <h1 class="text-xl font-bold border-b-2 border-dashed border-[#cad0ff] pb-3">Question-1: What are the different ways to select an element in the DOM?</h1>
+            <p class="text-xl pt-3">There are five methods to select an element in the DOM: getElementsByTagName(), getElementsByClassName(), getElementById(), querySelector(), and querySelectorAll(). In most cases, getElementById() is the preferred choice, though other methods have their uses as well. The simplest way to locate an HTML element in the DOM is by using its ID. If the element exists, the method returns it as an object. If it does not exist, the returned value will be null</p>
+        </div>
+        <div class="max-w-screen-2xl mx-auto my-5 py-5 px-5 rounded-lg bg-white">
+            <h1 class="text-xl font-bold border-b-2 border-dashed border-[#cad0ff] pb-3">Question-2: What is the difference between innerHTML, innerText, and textContent ?</h1>
+            <p class="text-xl pt-3">Key differences between innerHTML, innerText, and textContent:<br>
+                innerHTML returns all text, including HTML tags, within an element.<br>
+                innerText returns only the visible text inside an element and its child elements.<br>
+                textContent retrieves all text within an element and its children, including hidden text, but without formatting.<br></p>
+        </div>
+        <div class="max-w-screen-2xl mx-auto my-5 py-5 px-5 rounded-lg bg-white">
+            <h1 class="text-xl font-bold border-b-2 border-dashed border-[#cad0ff] pb-3">Question-3: What is event delegation in the DOM?</h1>
+            <p class="text-xl pt-3">Event delegation is a JavaScript technique where, instead of attaching individual event listeners to multiple child elements, a single listener is added to their parent.<br>
+                This approach leverages event bubbling, where an event starts at the target element and propagates up the DOM tree.<br>
+                It is particularly useful for handling a large number of dynamically created elements, improving performance by requiring only one event listener instead of multiple separate ones.<br></p>
+        </div>
+        <div class="max-w-screen-2xl mx-auto my-5 py-5 px-5 rounded-lg bg-white">
+            <h1 class="text-xl font-bold border-b-2 border-dashed border-[#cad0ff] pb-3">Question-4: What is event bubbling in the DOM?</h1>
+            <p class="text-xl pt-3">Event bubbling occurs when an event originates from the clicked element, whether it's a child element or a container div, and then propagates upward through its parent, grandparent, and beyond until it reaches the <body> tag of the HTML document.<br>
+                Inner (child) elements execute their event listeners first, followed by outer (parent) elements as the event moves up the DOM hierarchy.<br></p>
+        </div>
+        <div class="max-w-screen-2xl mx-auto my-5 py-5 px-5 rounded-lg bg-white">
+            <h1 class="text-xl font-bold border-b-2 border-dashed border-[#cad0ff] pb-3">Question-5: How do you create, add, and remove elements using JavaScript?</h1>
+            <p class="text-xl pt-3">In JavaScript, we can create elements, add them to the DOM, and remove them as needed.<br>
+                1. Create an element using document.createElement("tagName"), where tagName represents HTML tags like &ltp&gt, &lth1&gt, &ltdiv&gt, etc.<br>
+                2. Add an element using the .appendChild() method, which inserts the new element inside a parent element.<br>
+                3. Remove an element using .remove() for direct removal or .removeChild() to remove a specific child element from its parent.<br>
+
+            </p>
+        </div>
+    </main>
+</body>
+<script src="./router.js"></script>
+</html>

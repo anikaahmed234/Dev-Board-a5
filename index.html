@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev-Board</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        .disabled-btn {
+            background-color: grey;
+            color: white;
+        }
+
+        .task-history-item {
+            background-color: #F4F7FF;
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F4F7FF] flex flex-col w-screen justify-between h-screen  px-50 py-14 ">
+
+    <div class=" bg-white flex flex-row rounded-2xl justify-between p-6 ">
+        <div class="logo-banner flex flex-row text-center gap-3 items-center">
+            <img src="assets/logo.png" />
+            <h1 class="text-3xl">Dev<span class="font-bold">Board</span></h1>
+        </div>
+        <div class="flex flex-row gap-5 ">
+            <div class="flex justify-around items-center w-28 h-16 bg-[#F4F7FF] rounded-[32px] px-3 py-3">
+                <img src="assets/checkbox.png" alt="" class="h-8 w-8">
+                <p id="total-completed-tasks" class="text-3xl font-bold"></p>
+            </div>
+            <img src="assets/theme-btn.png" class="bg-[#F4F7FF] px-3 py-3 rounded-full h-16" id="theme-btn">
+        </div>
+    </div>
+
+    <div class=" pt-10 rounded-2xl flex flex-row w-full justify-between">
+        <div class="task-dashboard w-[80%] flex flex-col">
+            <div
+                class="task-header py-5 border-b-2 border-dashed border-[#cad0ff] bg-white flex flex-row justify-evenly">
+                <div class="task-assigned-div flex flex-row items-center  justify-start rounded-2xl bg-[#F4F7FF] p-4 w-[25%]">
+
+                        <div class="w-16 h-16 bg-white rounded-full flex justify-center items-center">
+                            <img src="assets/checkbox.png" alt="" class="w-7 h-7">
+                        </div>
+                        <div class="pl-[1rem]">
+                            <p>Task Assigned </p>
+                            <h1 id="task-assigned-count" class="text-3xl">06</h1>
+                        </div>
+                    
+                </div>
+                <div id="blog-page"
+                    class="flex items-center px-12 py-6 bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] rounded-2xl">
+                    <img src="assets/board.png">
+                    <p class="text-2xl text-white">Discover Something <br> New Today!</p>
+                </div>
+                <div class="flex justify-evenly px-10 flex-row items-center bg-[#F4F7FF] rounded-2xl">
+                    <div class=" bg-white rounded-full flex justify-center items-center mx-5">
+                        <img src="assets/calender.png" alt="">
+                    </div>
+                    <div>
+                        <p class="text-3xl"><span id="current-time" class="font-bold"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="task-grid pt-10  bg-white w-full flex flex-col gap-9 ">
+                <div class="flex flex-row w-full justify-evenly ">
+                    <div class="task-info w-[342px] h-[317px] px-6 py-6 rounded-2xl bg-[#F4F7FF]">
+                        <div class="bg-white w-28 h-10 px-4 py-2 rounded-lg mb-4">
+                            <p class="text-base">ShopEase</p>
+                        </div>
+                        <h3 class="task-title text-2xl font-medium mb-4">Fix Mobile Button Issue </h3>
+                        <div class="w-[294px] h-[92px] bg-white px-4 pt-4 pb-5 rounded-xl mb-[14px]">
+                            <p class="line-clamp-2">Debug using Chrome <br> DevTools, check for overlapping elements,
+                                and ensure onClick works properly and ensure onClick works properly</p>
+                        </div>
+                        <div class="flex justify-between items-center border-t-2 border-dashed border-[#cad0ff] pt-4">
+                            <div class="text-[#00303C]">
+                                <p>Deadline</p>
+                                <p class="font-medium">21 March 2025</p>
+                            </div>
+                            <div>
+                                <button
+                                    class="task-done w-[135px] h-[44px] bg-[#3752FD] text-white flex items-center justify-center rounded-lg">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-info w-[342px] h-[317px] px-6 py-6 rounded-2xl bg-[#F4F7FF]">
+                        <div class="bg-white w-28 h-10 px-4 py-2 rounded-lg mb-4">
+                            <p class="text-base">CloudSync</p>
+                        </div>
+                        <h3 class="task-title text-2xl font-medium mb-4">Add Dark Mode </h3>
+                        <div class="w-[294px] h-[92px] bg-white px-4 pt-4 pb-5 rounded-xl mb-[14px]">
+                            <p class="line-clamp-2">Store the users preferences in localStore </p>
+                        </div>
+                        <div class="flex justify-between items-center border-t-2 border-dashed border-[#cad0ff] pt-4">
+                            <div class="text-[#00303C]">
+                                <p>Deadline</p>
+                                <p class="font-medium">21 March 2025</p>
+                            </div>
+                            <div>
+                                <button
+                                    class="task-done w-[135px] h-[44px] bg-[#3752FD] text-white flex items-center justify-center rounded-lg">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-info w-[342px] h-[317px] px-6 py-6 rounded-2xl bg-[#F4F7FF]">
+                        <div class="bg-white w-28 h-10 px-4 py-2 rounded-lg mb-4">
+                            <p class="text-base">ShopEase</p>
+                        </div>
+                        <h3 class="task-title text-2xl font-medium mb-4">Fix Mobile Button Issue </h3>
+                        <div class="w-[294px] h-[92px] bg-white px-4 pt-4 pb-5 rounded-xl mb-[14px]">
+                            <p class="line-clamp-2">Debug using Chrome <br> DevTools, check for overlapping elements,
+                                and ensure onClick works properly and ensure onClick works properly</p>
+                        </div>
+                        <div class="flex justify-between items-center border-t-2 border-dashed border-[#cad0ff] pt-4">
+                            <div class="text-[#00303C]">
+                                <p>Deadline</p>
+                                <p class="font-medium">21 March 2025</p>
+                            </div>
+                            <div>
+                                <button
+                                    class="task-done w-[135px] h-[44px] bg-[#3752FD] text-white flex items-center justify-center rounded-lg">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row  justify-evenly ">
+                    <div class="task-info w-[342px] h-[317px] px-6 py-6 rounded-2xl bg-[#F4F7FF]">
+                        <div class="bg-white w-28 h-10 px-4 py-2 rounded-lg mb-4">
+                            <p class="text-base">ShopEase</p>
+                        </div>
+                        <h3 class="task-title text-2xl font-medium mb-4">Fix Mobile Button Issue </h3>
+                        <div class="w-[294px] h-[92px] bg-white px-4 pt-4 pb-5 rounded-xl mb-[14px]">
+                            <p class="line-clamp-2">Debug using Chrome <br> DevTools, check for overlapping elements,
+                                and ensure onClick works properly and ensure onClick works properly</p>
+                        </div>
+                        <div class="flex justify-between items-center border-t-2 border-dashed border-[#cad0ff] pt-4">
+                            <div class="text-[#00303C]">
+                                <p>Deadline</p>
+                                <p class="font-medium">21 March 2025</p>
+                            </div>
+                            <div>
+                                <button
+                                    class="task-done w-[135px] h-[44px] bg-[#3752FD] text-white flex items-center justify-center rounded-lg">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-info w-[342px] h-[317px] px-6 py-6 rounded-2xl bg-[#F4F7FF]">
+                        <div class="bg-white w-28 h-10 px-4 py-2 rounded-lg mb-4">
+                            <p class="text-base">ShopEase</p>
+                        </div>
+                        <h3 class="task-title text-2xl font-medium mb-4">Fix Mobile Button Issue </h3>
+                        <div class="w-[294px] h-[92px] bg-white px-4 pt-4 pb-5 rounded-xl mb-[14px]">
+                            <p class="line-clamp-2">Debug using Chrome <br> DevTools, check for overlapping elements,
+                                and ensure onClick works properly and ensure onClick works properly</p>
+                        </div>
+                        <div class="flex justify-between items-center border-t-2 border-dashed border-[#cad0ff] pt-4">
+                            <div class="text-[#00303C]">
+                                <p>Deadline</p>
+                                <p class="font-medium">21 March 2025</p>
+                            </div>
+                            <div>
+                                <button
+                                    class="task-done w-[135px] h-[44px] bg-[#3752FD] text-white flex items-center justify-center rounded-lg">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-info w-[342px] h-[317px] px-6 py-6 rounded-2xl bg-[#F4F7FF]">
+                        <div class="bg-white w-28 h-10 px-4 py-2 rounded-lg mb-4">
+                            <p class="text-base">ShopEase</p>
+                        </div>
+                        <h3 class="task-title text-2xl font-medium mb-4">Fix Mobile Button Issue </h3>
+                        <div class="w-[294px] h-[92px] bg-white px-4 pt-4 pb-5 rounded-xl mb-[14px]">
+                            <p class="line-clamp-2">Debug using Chrome <br> DevTools, check for overlapping elements,
+                                and ensure onClick works properly and ensure onClick works properly</p>
+                        </div>
+                        <div class="flex justify-between items-center border-t-2 border-dashed border-[#cad0ff] pt-4">
+                            <div class="text-[#00303C]">
+                                <p>Deadline</p>
+                                <p class="font-medium">21 March 2025</p>
+                            </div>
+                            <div>
+                                <button
+                                    class="task-done w-[135px] h-[44px] bg-[#3752FD] text-white flex items-center justify-center rounded-lg">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="activity-container justify-center w-[20%] bg-white ml-10 p-4">
+            <div
+                class="activity-header  p-5 border-b-2 border-dashed border-[#cad0ff] flex flex-col justify-center items-center rounded-2xl ">
+                <div class="flex flex-row justify-center items-center  gap-1 mb-4">
+                    <img src="assets/activity.png">
+                    <h1>Activity Log</h1>
+                </div>
+                <button id="clear-activity-history-btn"
+                    class="w-[135px] h-[44px] bg-[#3752FD] text-white flex items-center justify-center rounded-lg">Clear
+                    history</button>
+            </div>
+            <div id="activity-history-list" class="activity-history flex flex-col"></div>
+        </div>
+
+
+        <script src="script.js"></script>
+        <script src="router.js"></script>
+</body>
+
+</html>
